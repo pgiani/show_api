@@ -1,0 +1,24 @@
+{
+  "name": "show_api",
+  "version": "1.0.0",
+  "description": "a Node.js script to fetch a JSON data set and process it",
+  "main": "./src/sever.js",
+  "scripts": {
+    "start": "nodemon ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tv",
+    "node"
+  ],
+  "author": "Pablo H Giani",
+  "license": "GPL-2.0-only",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  }
+}
