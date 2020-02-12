@@ -2,7 +2,6 @@ var fs = require('fs').promises;
 const { showGeneralInfo, showEpisodeList } = require('./tvmaze');
 
 async function getShow(name) {
-  console.log(name);
   try {
     let episodes = {};
     const mainShowInfo = await showGeneralInfo(name);

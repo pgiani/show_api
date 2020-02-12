@@ -4,7 +4,7 @@ const MockAdapter = require('axios-mock-adapter');
 
 const getShow = require('../../app/get_show_info');
 
-test('get show stranger-things', async () => {
+test('get show stranger-things ', async () => {
   var mock = new MockAdapter(axios);
 
   const data = await fs.readFile(
@@ -24,6 +24,12 @@ test('get show stranger-things', async () => {
     .reply(200, JSON.parse(dataEspisodes));
 
   const result = await getShow('stranger-things');
-  console.log(result);
-  //  expect(result).toEqual(2993);
+  expect(result).not.toBeUndefined();
+
+  expect(result).toMatchObject({
+    '2993': {
+      totalDurationSec: 88140,
+      averageEpisodesPerSeason: 8.3,
+    },
+  });
 });

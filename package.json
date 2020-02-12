@@ -15,7 +15,8 @@
   "license": "GPL-2.0-only",
   "dependencies": {
     "axios": "^0.19.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "axios-mock-adapter": "^1.17.0",
