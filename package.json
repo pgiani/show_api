@@ -12,7 +12,7 @@
     "node"
   ],
   "author": "Pablo H Giani",
-  "license": "GPL-2.0-only",
+  "license": "GPL-3.0-only",
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1",

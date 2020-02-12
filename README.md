@@ -6,7 +6,8 @@
 
 This is just a work assignment where I had to:
 
-- Create an Node application to connect to the api.tvmaze.com api
+- Create an Node application to connect to the api.tvmaze.com
+- Reformat the data as fallow
 
 ## Reformat Data
 
@@ -19,7 +20,7 @@ This is just a work assignment where I had to:
 ## Setting up development environment 🛠
 
 - clone the repo and change directory to ./show_api
-- `npm run install`
+- `npm install`
 - `npm run start`
 - The app should now be running on `http://localhost:8080/`
 - To see the JSON data go to `http://localhost:8080/api/show?name=stranger-things`
@@ -27,6 +28,7 @@ This is just a work assignment where I had to:
 ## Tests 🚥
 
 - change directory to ./show_api
+- `npm install`
 - `npm run test`
 
 ## What's missing?
