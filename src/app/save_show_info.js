@@ -1,4 +1,4 @@
-const reformatData = require('./reformat');
+var fs = require('fs').promises;
 const { showGeneralInfo, showEpisodeList } = require('./tvmaze');
 
 async function getShow(name) {
@@ -12,12 +12,19 @@ async function getShow(name) {
     if (status === 200 && id) {
       // get ALL the episodes for this show ID
       episodes = await showEpisodeList(id);
-    }
 
-    return reformatData({ show: data, episodes: episodes.data });
+      await fs.writeFile(
+        `./src/___tests___/__mockData__/${name}.json`,
+        JSON.stringify(data, null, '\t'),
+      );
+      await fs.writeFile(
+        `./src/___tests___/__mockData__/${id}.json`,
+        JSON.stringify(episodes.data, null, '\t'),
+      );
+    }
   } catch (err) {
     console.error(err);
-    return { id, status };
+    return;
   }
 }
 

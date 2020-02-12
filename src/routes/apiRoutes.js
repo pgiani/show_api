@@ -1,12 +1,5 @@
-// ===============================================================================
-// LOAD DATA
-// We are linking our routes to a series of "data" sources.
-// These data sources hold arrays of information on table-data, waitinglist, etc.
-// ===============================================================================
-
-const tableData = require('../data/tableData');
 const getShow = require('../app/get_show_info');
-
+const savedShow = require('../app/save_show_info.js');
 // ===============================================================================
 // API ROUTING
 // ===============================================================================
@@ -22,8 +15,23 @@ module.exports = function(app) {
     const { name } = query;
 
     const data = await getShow(name);
-    console.log(data);
-    res.json(tableData);
+
+    res.json(data);
+  });
+
+  // API GET Requests
+  // this API point will save show data from the API to a file
+  // the purpose of this endpoint is to save data for testing
+  // ---------------------------------------------------------------------------
+
+  app.get('/api/saveShow', async function(req, res) {
+    // get the show name from the query parameter
+    const { query = {} } = req;
+    const { name } = query;
+
+    const data = await savedShow(name);
+
+    res.json({ status: 'ok' });
   });
 
   // API POST Requests
